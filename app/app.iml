@@ -203,5 +203,7 @@
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-sdk-api:17.0.0@aar" level="project" />
     <orderEntry type="module" module-name="JokeProviderLibrary" />
     <orderEntry type="module" module-name="displayajokeandroidlib" />
+    <orderEntry type="module" module-name="JokeProviderLibrary" />
+    <orderEntry type="module" module-name="displayajokeandroidlib" />
   </component>
 </module>
