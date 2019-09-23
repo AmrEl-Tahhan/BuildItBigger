@@ -6,7 +6,7 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.udacity.gradle.builditbigger.MainActivity;
 import com.udacity.gradle.builditbigger.R;
-
+import static org.hamcrest.core.StringContains.containsString;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,8 +28,9 @@ public class EndpointsAsyncTaskTest {
 
     @Test
     public void click_me() {
+
         onView(ViewMatchers.withText(R.string.button_text)).perform(click());
-        onView(withId(R.id.joke_tv)).check(matches(isDisplayed())).check(matches(not(withText(""))));
+        onView(withId(R.id.joke_tv)).check(matches(isDisplayed())).check(matches(not(withText(containsString("Failed to connect to /")))));
     }
 
 }
