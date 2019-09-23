@@ -5,14 +5,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Pair;
 import com.example.displayajokeandroidlib.DisplayAJokeActivity;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
-
 import java.io.IOException;
-
 import static com.udacity.gradle.builditbigger.MainActivity.INTENT_JOKE_TAG;
 
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
