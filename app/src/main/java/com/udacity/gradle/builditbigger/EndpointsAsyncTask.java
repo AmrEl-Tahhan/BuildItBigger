@@ -18,8 +18,6 @@ import static com.udacity.gradle.builditbigger.MainActivity.INTENT_JOKE_TAG;
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi mJokeApi = null;
     private Context mContext;
-    private InterstitialAd mInterstitialAd;
-    public static final String TAGTAG = "tag";
 
     public EndpointsAsyncTask(Context context) {
         this.mContext = context;
@@ -32,7 +30,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         if (mJokeApi == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://192.168.1.104:8080/_ah/api/" )
+                    .setRootUrl("http://10.0.3.2:8080/_ah/api/" )
                     .setGoogleClientRequestInitializer(abstractGoogleClientRequest ->
                             abstractGoogleClientRequest.setDisableGZipContent(true));
             mJokeApi = builder.build();

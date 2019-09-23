@@ -1,14 +1,9 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-
-import com.example.displayajokeandroidlib.DisplayAJokeActivity;
-import com.example.jokeproviderlibrary.JokeProvider;
 
 
 import androidx.appcompat.app.AppCompatActivity;
