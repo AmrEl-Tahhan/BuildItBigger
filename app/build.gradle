@@ -35,14 +35,23 @@ android {
     }
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:2.0.1'
-    }}
+    }
+    productFlavors {
+        free{
+            applicationIdSuffix '.free'
+        }
+        paid{
+            applicationIdSuffix '.paid'
+        }
+    }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.gms:play-services-ads:18.2.0'
-    implementation 'com.google.gms:google-services:4.3.2'
+    freeImplementation 'com.google.android.gms:play-services-ads:18.2.0'
+
     implementation 'com.google.api-client:google-api-client:1.30.2'
     implementation 'com.google.http-client:google-http-client-android:1.30.1'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
@@ -85,15 +94,11 @@ android {
         exclude 'META-INF/ASL2.0'
     }
     flavorDimensions "default"
-    productFlavors {
-        free{
-            applicationId "com.udacity.gradle.builtitbigger.free"
-        }
-        paid{
-            applicationId "com.udacity.gradle.builtitbigger.paid"
 
-        }
-    }
 }
-
+task runTests {
+    group "local"
+    dependsOn ":backend:appengineStart", check
+    finalizedBy ":backend:appengineStop"
+}
 
